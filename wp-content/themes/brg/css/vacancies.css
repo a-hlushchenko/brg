@@ -1,0 +1,268 @@
+.vacancies-top {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.vacancies-bg {
+  padding-top: 200px;
+  background-image: url("../svg/about-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right 200px;
+}
+
+.vacancies {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-bottom: 100px;
+}
+
+.text {
+  max-width: 590px;
+}
+
+.vacancies-top-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.vacancies-subtitile {
+  color: #ad9d72;
+  text-align: center;
+  font-family: Corinthia;
+  font-size: 48px;
+}
+
+.vacancies-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vacancies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.vacancies-item-wrapper {
+  padding: 24px;
+  border: 1px solid #ad9d72;
+}
+
+.vacancies-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.vacancies-item {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #222;
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+.vacancies-active {
+  background-color: #333;
+}
+
+.vacancies-active .vacancies-details {
+  display: flex;
+}
+
+.vacancies-item-date {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  color: #ad9d72;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.vacancies-item-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vacancies-item-title {
+  color: #ad9d72;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+.vacancies-item-subtitle {
+  opacity: 0.6;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.vacancies-item-text {
+  opacity: 0.6;
+  font-family: Gilroy;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.vacancies-details-button {
+  color: #ad9d72;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.vacancies-details-button::after {
+  content: "";
+  position: absolute;
+  right: -21px;
+  background-image: url("../svg/show-more.svg");
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  rotate: 180deg;
+  transition: rotate 0.5s;
+}
+
+.vacancies-active .vacancies-details-button::after {
+  rotate: 0deg;
+}
+
+.vacancies-details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 48px;
+  display: none;
+}
+
+.details-title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.details-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.details-item-title {
+  color: #fff;
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.details-list {
+  padding-left: 18px;
+}
+
+.details-element {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5em;
+  opacity: 0.7;
+  list-style-type: disc;
+}
+
+@media all and (width < 1024px) {
+  .vacancies-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vacancies-top-content,
+  .vacancies-bottom {
+    gap: 20px;
+  }
+
+  .vacancies-bg {
+    padding-top: 130px;
+  }
+
+  .vacancies-subtitile {
+    color: #ad9d72;
+    text-align: center;
+    font-family: Corinthia;
+    font-size: 32px;
+  }
+
+  .vacancies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .vacancies-item-wrapper {
+    padding: 10px;
+  }
+
+  .vacancies-item {
+    padding: 28px 16px 16px;
+    gap: 20px;
+  }
+
+  .vacancies-item-heading {
+    gap: 10px;
+  }
+
+  .vacancies-item-title {
+    font-size: 16px;
+  }
+
+  .vacancies-item-subtitle {
+    font-size: 12px;
+  }
+
+  .vacancies-item-text {
+    font-size: 14px;
+  }
+
+  .vacancies-item-date {
+    font-size: 10px;
+    top: 16px;
+    right: 10px;
+  }
+
+  .vacancies-details-button {
+    font-size: 12px;
+  }
+
+  .vacancies-details {
+    padding-top: 24px;
+    gap: 16px;
+  }
+
+  .details-title {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .details-element {
+    font-size: 14px;
+  }
+
+  .details-item {
+    gap: 8px;
+  }
+
+  .details-item-title {
+    font-size: 14px;
+  }
+
+  .vacancies {
+    padding-bottom: 50px;
+  }
+}

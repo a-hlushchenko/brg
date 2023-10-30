@@ -1,0 +1,45 @@
+<?php
+/*Template Name: команда*/
+get_header(); 
+
+$team = get_posts([
+    'post_type' => 'people',
+    'post_status' => 'publish',
+    'posts_per_page' => 100,
+]);
+
+// 'lang' => 'en'
+
+// foreach ($team as $people){
+//     echo "<pre>";
+//         print_r(get_field('image', $people->ID));
+//     echo "</pre>";      
+// }
+
+// echo "<pre>";
+// print_r($team);
+// echo "</pre>";
+?>
+
+<link href="<?php echo get_template_directory_uri(); ?>/css/team.css" rel="stylesheet"/>
+
+<div class="team-bg">
+    <main class="container team">
+        <h1 class="h2 wow fadeInDown">Наша команда</h1>
+        <div class="team-list">
+        <?php
+          foreach ($team as $people){ ?> 
+                <div class="team-item wow fadeInUp">
+                    <img src="<?=get_field('image', $people->ID); ?>" alt="employee">
+                    <strong class="team-item-title"><?=$people->title;?></strong>
+                    <p class="team-item-text"><?=$people->text;?></p>
+                </div>
+          <? } ?>
+        </div>
+    </main>
+</div>
+    
+<script src="<?php echo get_template_directory_uri(); ?>/js/team.js"></script>
+
+<?php
+get_footer();
