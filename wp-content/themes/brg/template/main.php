@@ -3,10 +3,30 @@
 get_header(); 
 $custom_fields = get_post_custom(get_the_ID()); 
 
+$url = $_SERVER['REQUEST_URI'];
+
 $team = get_posts([
-    'post_type' => 'people',
+    'post_type' => 'peoplenew',
     'post_status' => 'publish',
-    'posts_per_page' => 100,
+    'posts_per_page' => 1000,
+]);
+
+$news = get_posts([
+    'post_type' => 'news',
+    'post_status' => 'publish',
+    'posts_per_page' => 1000,
+]);
+
+$events = get_posts([
+    'post_type' => 'events',
+    'post_status' => 'publish',
+    'posts_per_page' => 1000,
+]);
+
+$adverts = get_posts([
+    'post_type' => 'adverts',
+    'post_status' => 'publish',
+    'posts_per_page' => 1000,
 ]);
 
 // echo "<pre>";
@@ -45,27 +65,27 @@ $team = get_posts([
                         <div class="about-bottom-item wow fadeInUp">
                             <span class="about-bottom-item-number">№ 01</span>
                             <strong class="about-bottom-title"><?php echo $custom_fields['about_bottom_item1_title'][0]?></strong>
-                            <span class="about-bottom-number"><span>15</span> рокiв</span>
+                            <span class="about-bottom-number"><?php echo $custom_fields['about_bottom_item1_number'][0]?></span>
                             <span class="about-bottom-subtitle"><?php echo $custom_fields['about_bottom_item1_subtitle'][0]?></span>
-                            <p class="about-bottom-text"><span class="about-bottom-text-number">3500 </span><?php echo $custom_fields['about_bottom_item1_text'][0]?></p>
+                            <p class="about-bottom-text"><?php echo $custom_fields['about_bottom_item1_text'][0]?></p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="about-bottom-item wow fadeInUp">
                             <span class="about-bottom-item-number">№ 02</span>
                             <strong class="about-bottom-title"><?php echo $custom_fields['about_bottom_item2_title'][0]?></strong>
-                            <span class="about-bottom-number">>3000</span>
+                            <span class="about-bottom-number"><?php echo $custom_fields['about_bottom_item2_number'][0]?></span>
                             <span class="about-bottom-subtitle"><?php echo $custom_fields['about_bottom_item2_subtitle'][0]?></span>
-                            <p class="about-bottom-text"><span class="about-bottom-text-number">30 + </span><?php echo $custom_fields['about_bottom_item2_text'][0]?></p>
+                            <p class="about-bottom-text"><?php echo $custom_fields['about_bottom_item2_text'][0]?></p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="about-bottom-item wow fadeInUp">
                             <span class="about-bottom-item-number">№ 03</span>
                             <strong class="about-bottom-title"><?php echo $custom_fields['about_bottom_item3_title'][0]?></strong>
-                            <span class="about-bottom-number">50 +</span>
+                            <span class="about-bottom-number"><?php echo $custom_fields['about_bottom_item3_number'][0]?></span>
                             <span class="about-bottom-subtitle"><?php echo $custom_fields['about_bottom_item3_subtitle'][0]?></span>
-                            <p class="about-bottom-text"><span class="about-bottom-text-number">2 <span>млн</span> </span><?php echo $custom_fields['about_bottom_item3_text'][0]?></p>
+                            <p class="about-bottom-text"><?php echo $custom_fields['about_bottom_item3_text'][0]?></p>
                         </div>
                     </div>
 
@@ -102,7 +122,7 @@ $team = get_posts([
                             <img src="/wp-content/themes/brg/img/restaurant2.png" alt="piccolino" class="restaurant-logo">
                             <span class="restaurant-title"><?php echo $custom_fields['restaurant_restaurant_2'][0]?></span>
                             <div class="restaurant-button"><img src="/wp-content/themes/brg/svg/arrow.svg" alt=">"></div>
-                            <span class="restaurant-number">№ 03</span>
+                            <span class="restaurant-number">№ 02</span>
                         </div>
                     </a>
                 </div>
@@ -193,7 +213,7 @@ $team = get_posts([
                 <div class="consalting-content wow fadeInRight">
                     <h3 class="consulting-title"><?php echo $custom_fields['consulting_top_subtitle'][0]?></h3>
                     <p class="consulting-text"><?php echo $custom_fields['consulting_top_text'][0]?></p>
-                    <a href="/consulting" class="button-wrapper">
+                    <a  href="<?= strpos($url, '/en') !== false ? '/consulting-en' : '/consulting'; ?>" class="button-wrapper">
                         <div class="action-button"><?php echo $custom_fields['consulting_top_button'][0]?></div>
                     </a>
                 </div>
@@ -279,8 +299,8 @@ $team = get_posts([
         <div class="swiper-button-next swiper-button-next-team1"><img src="/wp-content/themes/brg/svg/next.svg" alt="<"></div>
     </div>
     <div class="team-button-wrapper">
-        <a href="/team" class="button-wrapper">
-            <div class="action-button">Показати більше</div>
+        <a href="<?= strpos($url, '/en') !== false ? '/team-en' : '/team'; ?>" class="button-wrapper">
+            <div class="action-button"><?= strpos($url, '/en') !== false ? 'Show more' : 'Показати більше'; ?></div>
         </a>
     </div>
 </div>
@@ -289,52 +309,33 @@ $team = get_posts([
     <h2 class="h2"><?php echo $custom_fields['events_title'][0]?></h2>
     <div class="else-content">
         <div class="else-tab-list">
-            <button class="else-tab else-tab-active" data-tab="news">Новини</button>
-            <button class="else-tab" data-tab="events">Події</button>
-            <button class="else-tab" data-tab="adverts">Оголошення</button>
+            <button class="else-tab else-tab-active" data-tab="news"><?= strpos($url, '/en') !== false ? 'News' : 'Новини'; ?></button>
+            <button class="else-tab" data-tab="events"><?= strpos($url, '/en') !== false ? 'Events' : 'Події'; ?></button>
+            <button class="else-tab" data-tab="adverts"><?= strpos($url, '/en') !== false ? 'Adverts' : 'Оголошення'; ?></button>
         </div>
         <div class="else-list news else-active" id="news">
         <div id="news-swiper" class="swiper swiper-container news-swiper" style="position: unset">
             <div class="swiper-wrapper" style="position: unset">
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/consulting.jpg" alt="photo">
-                    <span></span>
+
+            <?php
+          foreach ($news as $item){ ?>
+          <div class="swiper-slide">
+                    <a href="/blog" class="else-item">
+                        <div class="else-img-wrapper">
+                            <img src="<?=get_field('image', $item->ID); ?>" alt="photo">
+                            <span></span>
+                        </div>
+                        <div class="else-item-content">
+                    <span class="else-type"><?= strpos($url, '/en') !== false ? 'New' : 'Новина'; ?></span>
+                    <strong class="else-title"><?=$item->title;?></strong>
+                    <span class="else-date"><?=$item->date;?></span>
                 </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/consulting.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/consulting.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
+          <? } ?>
+
+                
+                  
             </div>
             
             <div class="swiper-actions">
@@ -343,49 +344,31 @@ $team = get_posts([
                 <div class="swiper-button-next swiper-button-next-news"></div>
             </div>
         </div>
+        <a href="<?= strpos($url, '/en') !== false ? '/blog-en' : '/blog'; ?>" class="button-wrapper">
+      <div class="action-button"><?= strpos($url, '/en') !== false ? 'Blog' : 'Блог'; ?></div>
+          </a>
         </div>
         <div class="else-list events" id="events">
         <div id="events-swiper" class="swiper swiper-container events-swiper" style="position: unset">
             <div class="swiper-wrapper" style="position: unset">
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/else1.jpg" alt="photo">
-                    <span></span>
+                
+            <?php
+          foreach ($events as $item){ ?>
+          <div class="swiper-slide">
+                    <a href="<?= strpos($url, '/en') !== false ? '/blog-en' : '/blog'; ?>" class="else-item">
+                        <div class="else-img-wrapper">
+                            <img src="<?=get_field('image', $item->ID); ?>" alt="photo">
+                            <span></span>
+                        </div>
+                        <div class="else-item-content">
+                    <span class="else-type"><?= strpos($url, '/en') !== false ? 'Event' : 'Подія'; ?></span>
+                    <strong class="else-title"><?=$item->title;?></strong>
+                    <span class="else-date"><?=$item->date;?></span>
                 </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/else1.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/else1.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
+          <? } ?>
+                
             </div>
             
             <div class="swiper-actions">
@@ -394,49 +377,30 @@ $team = get_posts([
                 <div class="swiper-button-next swiper-button-next-events"></div>
             </div>
         </div>
+        <a href="<?= strpos($url, '/en') !== false ? '/blog-en' : '/blog'; ?>" class="button-wrapper">
+      <div class="action-button"><?= strpos($url, '/en') !== false ? 'Blog' : 'Блог'; ?></div>
+          </a>
         </div>
         <div class="else-list adverts" id="adverts">
         <div id="adverts-swiper" class="swiper swiper-container adverts-swiper" style="position: unset">
             <div class="swiper-wrapper" style="position: unset">
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/about.jpg" alt="photo">
-                    <span></span>
+            <?php
+          foreach ($adverts as $item){ ?>
+          <div class="swiper-slide">
+                    <a href="<?= strpos($url, '/en') !== false ? '/blog-en' : '/blog'; ?>" class="else-item">
+                        <div class="else-img-wrapper">
+                            <img src="<?=get_field('image', $item->ID); ?>" alt="photo">
+                            <span></span>
+                        </div>
+                        <div class="else-item-content">
+                    <span class="else-type"><?= strpos($url, '/en') !== false ? 'Advert' : 'Оголошення'; ?></span>
+                    <strong class="else-title"><?=$item->title;?></strong>
+                    <span class="else-date"><?=$item->date;?></span>
                 </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/about.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
-                <div class="swiper-slide">
-                <a href="#" class="else-item">
-                <div class="else-img-wrapper">
-                    <img src="/wp-content/themes/brg/img/about.jpg" alt="photo">
-                    <span></span>
-                </div>
-                <div class="else-item-content">
-                    <span class="else-type">Блог</span>
-                    <strong class="else-title">Подарунки з українською душею</strong>
-                    <span class="else-date">7 Березня, 2022</span>
-                </div>
-            </a>
-                </div>
+          <? } ?>
+                
             </div>
             
             <div class="swiper-actions">
@@ -445,8 +409,12 @@ $team = get_posts([
                 <div class="swiper-button-next swiper-button-next-adverts"></div>
             </div>
         </div>
+        <a href="<?= strpos($url, '/en') !== false ? '/blog-en' : '/blog'; ?>" class="button-wrapper">
+      <div class="action-button"><?= strpos($url, '/en') !== false ? 'Blog' : 'Блог'; ?></div>
+          </a>
         </div>
     </div>
+    
 </section>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>

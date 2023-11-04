@@ -2,6 +2,8 @@
 /*Template Name: консалтинг*/
 get_header(); 
 
+$url = $_SERVER['REQUEST_URI'];
+
 $custom = get_post_custom(get_the_ID()); 
 
 ?>
@@ -117,7 +119,7 @@ $custom = get_post_custom(get_the_ID());
             
         </div>
         <button class="button-wrapper" style="margin: 0 auto">
-      <div class="action-button open-feedback">Зворотній зв’язок</div>
+      <div class="action-button open-feedback"><?= strpos($url, '/en') !== false ? 'feedback' : "Зворотній зв’язок"; ?></div>
     </button>
     </section>
 

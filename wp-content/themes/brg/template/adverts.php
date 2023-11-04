@@ -1,48 +1,36 @@
 <?php
 /*Template Name: оголошення*/
 get_header(); 
+
+$url = $_SERVER['REQUEST_URI'];
+
+$adverts = get_posts([
+    'post_type' => 'adverts',
+    'post_status' => 'publish',
+    'posts_per_page' => 1000,
+]);
 ?>
 
 <link href="<?php echo get_template_directory_uri(); ?>/css/events.css" rel="stylesheet"/>
 
 <div class="events-bg">
     <div class="container events">
-        <div class="events-tab wow slideInDown">Оголошення</div>
+        <div class="events-tab wow slideInDown"><?= strpos($url, '/en') !== false ? 'Adverts' : 'Оголошення'; ?></div>
         <div class="events-list">
+        <?php
+          foreach ($adverts  as $item){ ?>
             <div class="events-item wow slideInLeft">
-                <img src="/wp-content/themes/brg/img/news-page.jpg" alt="photo" class="events-img">
+                <img src="<?=get_field('image', $item->ID); ?>" alt="photo" class="events-img">
                 <div class="events-content">
-                    <span class="events-date">7 Березня, 2022</span>
-                    <h1 class="events-title">Banquet hall  Beef&Cake</h1>
-                    <pre class="events-text">Новий, сучасний банкетний зал в самому серці Хмельницького❤️‍🔥
-Кожне ваше свято стане незабутнім, адже митті радості з близькими, роблять наше життя по-справжньому щасливим✨
-
-Banquet hall Beef&cake — це можливість відсвяткувати
-будь-яке свято в своєму улюбленому ресторані з:
-~ професійним обслуговуванням
-~ неперевершеними смаковими поєднаннями
-~ привітним персоналом</pre>
+                    <span class="events-date"><?=$item->date;?></span>
+                    <h1 class="events-title"><?=$item->title;?></h1>
+                    <pre class="events-text"><?=$item->text;?></pre>
                 </div>
             </div>
-            <div class="events-item wow slideInLeft">
-                <img src="/wp-content/themes/brg/img/news-page.jpg" alt="photo" class="events-img">
-                <div class="events-content">
-                    <span class="events-date">7 Березня, 2022</span>
-                    <h1 class="events-title">Banquet hall  Beef&Cake</h1>
-                    <pre class="events-text">Новий, сучасний банкетний зал в самому серці Хмельницького❤️‍🔥
-Кожне ваше свято стане незабутнім, адже митті радості з близькими, роблять наше життя по-справжньому щасливим✨
-
-Banquet hall Beef&cake — це можливість відсвяткувати
-будь-яке свято в своєму улюбленому ресторані з:
-~ професійним обслуговуванням
-~ неперевершеними смаковими поєднаннями
-~ привітним персоналом</pre>
-                </div>
-            </div>
+          <? } ?>
         </div>
     </div>
 </div>
-    
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/events.js"></script>
 

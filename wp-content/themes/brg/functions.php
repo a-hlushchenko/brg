@@ -413,7 +413,7 @@ function remove_admin_menu()
   remove_menu_page('link-manager.php'); // Ссылки*/
   remove_menu_page('wpcf7'); // Contact form 7
   //remove_menu_page('options-framework'); // Cherry Framework
-  remove_menu_page('edit.php?post_type=acf-field-group'); // ACF
+	remove_menu_page('edit.php?post_type=acf-field-group'); // ACF
   /*remove_menu_page('WP-Lightbox-2'); // Плагин Lightbox 2*/
   //remove_menu_page('admin.php'); // Консоль
 }
@@ -423,18 +423,3 @@ function remove_text_editor() {
 }
 
 add_action('init', 'remove_text_editor');
-
-function custom_post_type_registration() {
-    $args = array(
-        'labels' => array(
-            'name' => __('People', 'textdomain'),
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'show_in_rest' => true, 
-    );
-
-    register_post_type('people', $args);
-}
-
-add_action('init', 'custom_post_type_registration');

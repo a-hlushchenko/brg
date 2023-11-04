@@ -4,6 +4,8 @@ get_header();
 
 $custom_fields = get_post_custom(get_the_ID());
 
+$url = $_SERVER['REQUEST_URI'];
+
 $vacancies = get_posts([
     'post_type' => 'vacancy',
     'post_status' => 'publish',
@@ -51,11 +53,11 @@ echo "</pre>";
                         </div>
                         <p class="vacancies-item-text"><?=$vac->text;?></p>
                         <div class="vacancies-details-wrapper">
-                            <button class="vacancies-details-button">Показати більше</button>
+                            <button class="vacancies-details-button"><?= strpos($url, '/en') !== false ? 'Show more' : 'показати більше'; ?></button>
                             <div class="vacancies-details">
-                                <strong class="details-title">Опис вакансії:</strong>
+                                <strong class="details-title"><?= strpos($url, '/en') !== false ? 'description' : 'ОПИС ВАКАНСІЇ'; ?>:</strong>
                                 <div class="details-item">
-                                    <span class="details-item-title">ВИМОГИ ДО КАНДИДАТА:</span>
+                                    <span class="details-item-title"><?= strpos($url, '/en') !== false ? 'REQUIREMENTS' : 'ВИМОГИ ДО КАНДИДАТА'; ?>:</span>
 
                                     <?php $requires = get_field('require', $vac->ID); ?>
                                     <?php if($requires){ ?> 
@@ -67,7 +69,7 @@ echo "</pre>";
                                     <?php } ?>
                                 </div>
                                 <div class="details-item">
-                                    <span class="details-item-title">ОБОВ’ЯЗКИ:</span>
+                                    <span class="details-item-title"><?= strpos($url, '/en') !== false ? 'duties' : "Обов'язки"; ?>:</span>
                                     <ul class="details-list">
                                     <?php $duties = get_field('duties', $vac->ID); ?>
                                     <?php if($duties){ ?> 
@@ -80,7 +82,7 @@ echo "</pre>";
                                     </ul>
                                 </div>
                                 <button class="button-wrapper header-contact-button open-request">
-                                    <div class="action-button">Надіслати запит</div>
+                                    <div class="action-button"><?= strpos($url, '/en') !== false ? 'Send a request' : 'Надіслати запит'; ?></div>
                                 </button>
                             </div>
                         </div>

@@ -75,12 +75,6 @@
   font-weight: 700;
 }
 
-.help-bg {
-  background-image: url("../svg/consulting-bg.svg");
-  background-repeat: no-repeat;
-  background-position: left 100px;
-}
-
 .accompany {
   display: flex;
   flex-direction: column;
@@ -181,6 +175,7 @@
   }
   .consulting-bg {
     padding-top: 130px;
+    background-size: contain;
   }
 
   .text {

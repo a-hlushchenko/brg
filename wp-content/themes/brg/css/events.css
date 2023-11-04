@@ -1,7 +1,7 @@
 .events-bg {
   background-image: url("../svg/about-bg.svg");
   background-repeat: no-repeat;
-  background-position: right top 20px;
+  background-position: right top 220px;
 }
 
 .events {
@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  width: 100%;
 }
 
 .events-tab {
@@ -28,7 +28,7 @@
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  width: fit-content;
+  width: 100%;
 }
 
 .events-item {
@@ -37,6 +37,7 @@
   display: flex;
   gap: 40px;
   align-items: center;
+  width: 100%;
 }
 
 .events-content {
@@ -44,6 +45,7 @@
   flex-direction: column;
   gap: 32px;
   align-items: flex-end;
+  width: 100%;
 }
 
 .events-date {
@@ -101,6 +103,10 @@
     margin-right: 30px;
     padding: 8px 16px;
     font-size: 26px;
+  }
+
+  .events-bg {
+    background-image: none;
   }
 }
 

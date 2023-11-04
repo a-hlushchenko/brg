@@ -97,7 +97,7 @@
       <div class="menu-link-list">
         <a class="menu-link" href="#">Про нас</a>
         <a class="menu-link" href="/team">Команда</a>
-        <a class="menu-link" href="#">Блог</a>
+        <a class="menu-link" href="/blog">Блог</a>
         <a class="menu-link" href="/vacancies">Вакансії</a>
       </div>
     </li>
@@ -119,8 +119,8 @@
     </li>
   </ul>
   <div class="network-list">
-    <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
-    <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
+    <a class="network" href="https://www.facebook.com/bestrestaurantgroup1" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
+    <a class="network" href="https://www.instagram.com/brg_best.restaurant.group/" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
     <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/telegram.svg" alt="telegram"></a>
   </div>
 </div>
@@ -132,7 +132,7 @@
       <div class="menu-link-list">
         <a class="menu-link" href="#">About us</a>
         <a class="menu-link" href="/en/team-en">Team</a>
-        <a class="menu-link" href="#">Blog</a>
+        <a class="menu-link" href="/en/blog-en">Blog</a>
         <a class="menu-link" href="/en/vacancies-en">Vacancies</a>
       </div>
     </li>
@@ -154,8 +154,8 @@
     </li>
   </ul>
   <div class="network-list">
-    <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
-    <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
+    <a class="network" href="https://www.facebook.com/bestrestaurantgroup1" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
+    <a class="network" href="https://www.instagram.com/brg_best.restaurant.group/" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
     <a class="network" href="#" target="_blank"><img width="40" height="40" src="/wp-content/themes/brg/svg/telegram.svg" alt="telegram"></a>
   </div>
 </div>

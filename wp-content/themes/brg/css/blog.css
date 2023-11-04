@@ -1,0 +1,28 @@
+.events-bg {
+  background-image: url("../svg/about-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right top 180px;
+}
+
+.else-list {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.else-active {
+  display: grid;
+}
+
+.else {
+  padding-top: 200px;
+}
+
+@media all and (width < 940px) {
+  .else-active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .else {
+    padding-top: 130px;
+  }
+}

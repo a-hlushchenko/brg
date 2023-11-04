@@ -24,7 +24,7 @@
                 <div class="footer-link-list">
                     <a class="footer-link" href="#">Про нас</a>
                     <a class="footer-link" href="/team">Команда</a>
-                    <a class="footer-link" href="#">Блог</a>
+                    <a class="footer-link" href="/blog">Блог</a>
                     <a class="footer-link" href="/vacancies">Вакансії</a>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                     <a class="footer-link" href="tel:+380681730927">+ 38 068 173 09 27</a>
                     <a class="footer-link" href="mailto:brgservicesuk@gmail.com">brgservicesuk@gmail.com</a>
                     <div class="network-list">
-                        <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
-                        <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
+                        <a class="network" href="https://www.facebook.com/bestrestaurantgroup1" target="_blank"><img src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
+                        <a class="network" href="https://www.instagram.com/brg_best.restaurant.group/" target="_blank"><img src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
                         <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/telegram.svg" alt="telegram"></a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                 <div class="footer-link-list">
                     <a class="footer-link" href="#">About us</a>
                     <a class="footer-link" href="/en/team-en">Team</a>
-                    <a class="footer-link" href="#">Blog</a>
+                    <a class="footer-link" href="/en/blog-en">Blog</a>
                     <a class="footer-link" href="/en/vacancies-en">Vacancies</a>
                 </div>
             </div>
@@ -99,8 +99,8 @@
                     <a class="footer-link" href="tel:+380681730927">+ 38 068 173 09 27</a>
                     <a class="footer-link" href="mailto:brgservicesuk@gmail.com">brgservicesuk@gmail.com</a>
                     <div class="network-list">
-                        <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
-                        <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
+                        <a class="network" href="https://www.facebook.com/bestrestaurantgroup1" target="_blank"><img src="/wp-content/themes/brg/svg/facebook.svg" alt="facebook"></a>
+                        <a class="network" href="https://www.instagram.com/brg_best.restaurant.group/" target="_blank"><img src="/wp-content/themes/brg/svg/instagram.svg" alt="instagram"></a>
                         <a class="network" href="#" target="_blank"><img src="/wp-content/themes/brg/svg/telegram.svg" alt="telegram"></a>
                     </div>
                 </div>
