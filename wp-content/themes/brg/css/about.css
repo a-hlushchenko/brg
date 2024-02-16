@@ -1,0 +1,156 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.first-section,
+.second-section,
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/about-bg.png");
+  border-radius: 20px;
+  background-color: #1c1c1c;
+}
+
+.about-content {
+  padding: 24px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content .h2 {
+  padding-bottom: 32px;
+}
+
+.second-section .text {
+  padding: 24px;
+  padding-right: 40px;
+}
+
+.first-section .text {
+  padding: 24px;
+  padding-left: 40px;
+}
+
+.first-section img,
+.second-section img,
+.main-section img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 13px 4px 15px 0px rgba(28, 28, 28, 0.6);
+  transition: scale 0.5s;
+}
+
+.first-section img:hover,
+.second-section img:hover,
+.main-section img:hover {
+  scale: 1.05;
+}
+
+.propose img {
+  box-shadow: -13px 4px 15px 0px rgba(28, 28, 28, 0.6);
+}
+
+.action-button {
+  margin: 0 auto;
+}
+
+.about-bg {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  z-index: -1;
+}
+
+.about2-bg {
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  z-index: -1;
+}
+
+.action-button.first {
+  margin-bottom: 50px;
+}
+
+.about-subtitle {
+  color: #ad9d72;
+  font-family: Corinthia, sans-serif;
+  font-size: 30px;
+}
+
+.logos {
+  border-radius: 20px;
+  padding: 32px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/logos-bg.png");
+}
+
+.logos .swiper-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+
+.logos .swiper-slide {
+  width: fit-content;
+}
+
+.logos img {
+  max-height: 100px;
+  object-fit: contain;
+  width: fit-content;
+  filter: grayscale(100%);
+  transition: filter 0.5s, scale 0.5s;
+}
+
+.logos img:hover {
+  filter: grayscale(0%);
+  scale: 1.1;
+}
+
+@media all and (width < 1024px) {
+  .partners-content {
+    gap: 16px;
+  }
+
+  .about-bg,
+  .about2-bg {
+    display: none;
+  }
+}
+
+@media all and (width < 768px) {
+  .first-section,
+  .second-section,
+  .main-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .second-section img {
+    order: -1;
+  }
+
+  .partners-content,
+  .propose .text,
+  .bussiness .text {
+    padding: 32px 8px;
+  }
+
+  .partners-bg {
+    display: none;
+  }
+
+  .logos img {
+    max-height: 80px;
+  }
+}

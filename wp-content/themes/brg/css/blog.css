@@ -1,0 +1,126 @@
+.events-bg {
+  background-image: url("../svg/about-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right top 180px;
+}
+
+.else-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 24px;
+  background-image: url("../img/blog-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 36px;
+  background-color: #1c1c1c;
+}
+
+.blog-pattern {
+  position: absolute;
+  transform: translate(0%, 50%);
+  right: 0;
+  z-index: -1;
+}
+
+.else-active {
+  display: grid;
+}
+
+.else {
+  padding-top: 200px;
+}
+
+.else-tab-list {
+  margin-bottom: 0;
+}
+
+.else-tab {
+  background-color: transparent;
+  opacity: 1;
+  border-radius: 24px 24px 0px 0px;
+  border: 3px solid #ad9d72;
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  border-bottom: unset;
+  transition: color 0.5s, background-color 0.5s;
+  background-color: #1c1c1c;
+}
+
+.else-tab-active {
+  background-color: #b8a268;
+  color: #1c1c1c;
+}
+
+.prev.page-numbers {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 auto;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.current.page-numbers {
+  color: #ad9d72;
+}
+
+.page-numbers {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.next.page-numbers {
+  background-color: #ad9d72;
+  border-radius: 8px;
+  padding: 12px;
+  color: #1c1c1c;
+  box-shadow: 3px 3px 12px 0px rgba(113, 99, 63, 0.3),
+    -3px -3px 12px 0px rgba(216, 201, 159, 0.25);
+  transition: box-shadow 0.5s;
+}
+
+.next.page-numbers:hover {
+  box-shadow: 6px 6px 15px 0px rgba(113, 99, 63, 0.3),
+    -6px -6px 15px 0px rgba(216, 201, 159, 0.25);
+}
+
+@media all and (width < 940px) {
+  .else-active {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .else {
+    padding-top: 130px;
+  }
+
+  .blog-pattern {
+    display: none;
+  }
+}
+
+@media all and (width < 768px) {
+  .else-active {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-image: unset;
+  }
+
+  .else-tab {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-bottom: 3px solid #ad9d72;
+  }
+
+  .else-tab-list {
+    margin-bottom: 16px;
+  }
+}

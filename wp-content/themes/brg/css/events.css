@@ -1,0 +1,204 @@
+.events-bg {
+  background-image: url("../svg/about-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right top 220px;
+  background-attachment: fixed;
+}
+
+.events {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+  gap: 40px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.events-item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.events-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 32px;
+  width: 100%;
+}
+
+.events-date {
+  opacity: 0.4;
+  font-size: 14px;
+  font-weight: 500;
+  align-self: flex-end;
+}
+
+.events-title {
+  width: 100%;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.events-title.main {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #ad9d72;
+}
+
+.events-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8em;
+  max-width: 100%;
+  width: 100%;
+}
+
+.events-img {
+  max-width: 380px;
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.events-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 40px 65px;
+  width: 100%;
+  background-image: url("../img/blog-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
+  border-radius: 20px;
+  position: relative;
+}
+
+.event-details-button {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 76px;
+  height: 76px;
+  border-radius: 100px;
+  background-color: #ad9d72;
+  box-shadow: 5px 5px 12px 0px rgba(107, 95, 63, 0.7),
+    -6px -6px 12px 0px rgba(81, 67, 30, 0.7);
+}
+
+.event-details-button span {
+  position: absolute;
+  top: 36px;
+  left: 28px;
+  width: 20px;
+  height: 4px;
+  background-color: #000;
+  transition: rotate 0.5s;
+}
+
+.event-details-button span:nth-child(2) {
+  rotate: -90deg;
+}
+
+.event-active .event-details-button span:nth-child(2) {
+  rotate: 0deg;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.events-title.second {
+  display: none;
+}
+
+.event-active .events-title.second {
+  display: block;
+}
+
+@media all and (width < 1140px) {
+  .events-title {
+    font-size: 36px;
+  }
+
+  .events-text {
+    font-size: 18px;
+  }
+
+  .events {
+    padding-top: 130px;
+    padding-bottom: 50px;
+  }
+
+  .event-details-button {
+    width: 59px;
+    height: 59px;
+    bottom: -16px;
+    right: -4px;
+  }
+
+  .event-details-button span {
+    position: absolute;
+    top: 28px;
+    left: 21px;
+    width: 17px;
+    height: 3px;
+    background-color: #000;
+    transition: rotate 0.5s;
+  }
+}
+
+@media all and (width < 940px) {
+  .events-item {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .events-item-wrapper {
+    padding: 16px 16px 32px;
+  }
+
+  .events-tab {
+    margin-right: 30px;
+    padding: 8px 16px;
+    font-size: 26px;
+  }
+
+  .events-bg {
+    background-image: none;
+  }
+
+  .events-list {
+    gap: 60px;
+  }
+}
+
+@media all and (width < 768px) {
+  .events-title {
+    font-size: 24px;
+  }
+
+  .events-text {
+    font-size: 14px;
+  }
+
+  .events-date {
+    font-size: 10px;
+  }
+}
